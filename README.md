@@ -17,6 +17,7 @@ If you're having any further issues or roadblocks while setting up the backend s
 Open two terminals and cd into frontend and backend folder respectively. 
 First- To run the backend- you can type "node index.js" 
 Once your backend is running you can go ahead an run the frontend by the command- "npm run dev" 
+Last but not the least, you can open your browser and search for "http://localhost:5173" to start using the website!
 
 
 # Technologies used- 
