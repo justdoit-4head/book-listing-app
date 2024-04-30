@@ -8,7 +8,7 @@ Make a .env file in the backend folder and make two variables for the PORT and m
 
 # Frontend- 
 
-To make things easier and clean, for the frontend- I've made a file called "const.jsx" in which you can put the url for the backend server that youre running on. For example- if youre running your backend server in PORT- 3000, usually, the url for the backend will be- http://localhost:3000 
+To make things easier and clean, for the frontend- I've made a file called "const.jsx" in which you can put the url for the backend server that youre running on. For example- if youre running your backend server in PORT- 3000, the url for the backend will be- http://localhost:3000 
 
 If you're having any further issues or roadblocks while setting up the backend server, you can always use the live hosted backend for the link- https://book-listing-app-0nyt.onrender.com
 
