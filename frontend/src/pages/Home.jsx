@@ -4,6 +4,7 @@ import Spinner from '../components/Spinner';
 import { Link } from 'react-router-dom';
 import { AiOutlineEdit } from 'react-icons/ai';
 import { BsInfoCircle } from 'react-icons/bs';
+import { CiSearch } from "react-icons/ci";
 import { MdOutlineAddBox, MdOutlineDelete } from 'react-icons/md';
 import BooksTable from '../components/home/BooksTable';
 import BooksCard from '../components/home/BooksCard';
@@ -12,6 +13,21 @@ const Home = () => {
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(false);
   const [showType, setShowType] = useState('table');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [filteredBooks, setFilteredBooks] = useState([]);
+
+  const handleSearchChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
+
+  useEffect(() => {
+    const filtered = books.filter((book) => {
+      const searchTerms = searchQuery.toLowerCase();
+      const bookData = Object.values(book).join(' ').toLowerCase();
+      return bookData.includes(searchTerms);
+    });
+    setFilteredBooks(filtered);
+  }, [books, searchQuery]);
 
   useEffect(() => {
     setLoading(true);
@@ -49,12 +65,22 @@ const Home = () => {
           <MdOutlineAddBox className='text-sky-800 text-4xl' />
         </Link>
       </div>
+      <div className="searching mb-3 ml-2">
+     
+      <div className="pt-2 relative mx-auto text-gray-600">
+        <input className="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
+          type="search" name="search" placeholder="Search by Author, bookname, publish year..." 
+          value={searchQuery}
+          onChange={handleSearchChange}/>
+      </div>
+
+      </div>
       {loading ? (
         <Spinner />
       ) : showType === 'table' ? (
-        <BooksTable books={books} />
+        <BooksTable books={filteredBooks} />
       ) : (
-        <BooksCard books={books} />
+        <BooksCard books={filteredBooks} />
       )}
     </div>
   );
