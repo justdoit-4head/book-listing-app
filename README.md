@@ -25,3 +25,8 @@ Last but not the least, you can open your browser and search for "http://localho
 This app runs on React Library with the vite template. For styling, tailwind css was used. BrowseRouter from react-router-dom was used for routing the pages and axios was used to make api calls fromt he frontend. 
 For backend- NodeJs, ExpressJs, Mongoose, dotenv for storing variables, cors for setthing up cross platform policy. 
 
+# Live website- 
+
+To check-out the live version of this website you can click on- https://booklisting-7700.netlify.app
+
+Cheers
