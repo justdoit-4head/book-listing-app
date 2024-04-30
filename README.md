@@ -19,6 +19,8 @@ First- To run the backend- you can type "node index.js"
 Once your backend is running you can go ahead an run the frontend by the command- "npm run dev" 
 Last but not the least, you can open your browser and search for "http://localhost:5173" to start using the website!
 
+# Deployment-
+This website is deployed on netifly for the frontend and render for the backend
 
 # Technologies used- 
 
